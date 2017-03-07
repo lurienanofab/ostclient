@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "OSTicket Client";
+}
+
+<div class="container-fluid">
+    <h3>OSTicket Client</h3>
+
+    <hr />
+
+    <div class="form-inline ostclient-demo">
+        <div class="form-group">
+            <input type="text" class="form-control ticket-number" style="width: 100px;" placeholder="Ticket #" />
+            <input type="text" class="form-control message" style="width: 400px;" placeholder="Message" />
+            <button type="button" class="btn btn-default post-message">Post Message</button>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            <input type="text" class="form-control email" style="width: 200px;" placeholder="Email" />
+            <button type="button" class="btn btn-default post-message">Find Tickets by Email</button>
+            <em class="text-muted">% = wildcard</em>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(".ostclient-demo").ostclient({ "url": "api" });
+    </script>
+}
